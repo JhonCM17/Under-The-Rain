@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-image: radial-gradient(rgb(45, 45, 70),rgb(3, 3, 17))
+
+}
+.container{
+    position: relative;
+    height: 810px;
+    width: 500px;
+    border-bottom: solid 2px #fff;
+    
+}
+
+.cloud{
+    position: relative;
+    top: 100px;
+    width: 70%;
+    height: 110px;
+    background: #fff;
+    border-radius: 100px;
+    left: 50px;
+    filter: drop-shadow(5px -4px 10px #000);
+}
+.cloud::before
+{
+    content: '';
+    position: absolute;
+    height: 110px;
+    width: 120px;
+    background: #fff;
+    border-radius: 50%;
+    top: -50%;
+    left: 40px;
+    box-shadow: 90px 0 0 30px #fff;
+}
+
+.rain{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 0 20px;
+
+}
+.rain span{
+    position:relative;
+    bottom: 10px;
+    width: 5px;
+    height: 7px;
+    background:  rgb(255, 255, 255);
+    margin: 0 5px;
+    border-radius: 50px;
+    animation: animate 10s linear infinite;
+    animation-duration: calc(20s / var(--i));
+    left: 50px;
+   
+    transform-origin: bottom;
+}
+
+@keyframes animate{
+    0%{
+        transform: translatey(0) scale(1);
+
+    }
+    70%{
+        transform: translateY(700px) scale(1);
+
+    }
+    100%{
+        transform: translateY(700px) scale(0);
+    }
+}
+
+.person{
+    background-image: url(./img/man.png);
+    height: 450px;
+    width: 200px;
+    top: 400px;
+    left: 44%;
+    background-size: 100%;
+    background-repeat: no-repeat ;
+    transition: 300ms;
+    position: fixed;
+    filter: drop-shadow(5px -4px 5px #000);
+}
